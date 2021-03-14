@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Jose Vidal\Documents\DAM-2\Github\proyectoFinal\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\Jose Vidal\Documents\DAM-2\DI 2T\T3-Angular\practicafinal\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -742,6 +742,7 @@ class AsignaturasComponent {
     filtrarAsignaturas(asign, ciclo, conoci) {
         if (asign.length == 0 && ciclo.length == 0 && conoci.length == 0) {
             this.listaAsignaturas = this.servicioAsignatura.getTodasListaAsignatura();
+            this.cantAsig = this.servicioAsignatura.getTodasListaAsignatura().length;
         }
         else {
             this.listaAsignaturas = this.servicioAsignatura.getFiltroTodasAsignatura(asign, ciclo, conoci);
