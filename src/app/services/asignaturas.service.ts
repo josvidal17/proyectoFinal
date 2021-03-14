@@ -84,7 +84,7 @@ export class AsignaturasService {
       conocimientos: [
         { nombre: 'java', imagen: './assets/images/java.png' },
         { nombre: 'xml', imagen: './assets/images/xml.jpg' },
-        { nombre: 'json', imagen: ./'assets/images/json.png' },
+        { nombre: 'json', imagen: './assets/images/json.png' },
       ],
       ciclo: 'DAM ',
       curso: 2,
