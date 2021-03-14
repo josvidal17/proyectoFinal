@@ -212,7 +212,7 @@ export class AsignaturasService {
     }
 
     if(conoci.length>0){
-      this.auxLista = this.auxLista.filter((asig)=>asig.conocimientos.find((cono=>cono.nombre==conoci)));      
+      this.auxLista = this.auxLista.filter((asig)=>asig.conocimientos.find((cono=>cono.nombre.toLocaleLowerCase()==conoci.toLocaleLowerCase())));      
     }
     return this.auxLista;
   }
