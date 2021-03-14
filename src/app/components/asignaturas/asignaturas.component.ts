@@ -23,6 +23,7 @@ export class AsignaturasComponent implements OnInit {
   filtrarAsignaturas(asign:string,ciclo:string,conoci:string){
     if(asign.length==0 && ciclo.length==0 && conoci.length==0){
       this.listaAsignaturas = this.servicioAsignatura.getTodasListaAsignatura(); 
+      this.cantAsig = this.listaAsignaturas.length;
     }else{
       this.listaAsignaturas = this.servicioAsignatura.getFiltroTodasAsignatura(asign,ciclo,conoci);
       this.cantAsig = this.listaAsignaturas.length;
