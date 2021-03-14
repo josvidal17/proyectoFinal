@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row mb-4">
+        <div class="col" style="text-align: center;">
+            <label class="form-label">Filtrar por nombre</label>
+            <input type="text" #inputAsig class="form-control" placeholder="Introduce el nombre la asignatura">
+          </div>
+          <div class="col mb-4" style="text-align: center;">
+            <label for="exampleInputPassword1" class="form-label">Filtrar por ciclo</label>
+            <input type="text" class="form-control" #inputCiclo placeholder="Selecciona un ciclo">
+          </div>
+          <div class="col mb-4" style="text-align: center;">
+            <label for="exampleInputPassword1" class="form-label">Filtrar por conocimiento</label>
+            <input type="text" class="form-control" #inputConoci placeholder="Selecciona un conocimiento">
+          </div>
+          <button class="btn btn-primary" (click)="filtrarAsignaturas(inputAsig.value,inputCiclo.value,inputConoci.value)">Filtrar</button>
+    </div>
+    <p class="fw-bold h3 mb-4" >Los resultado de búsqueda son:</p>
+    
+    <div class="alert alert-primary" role="alert">
+        El número de asignatura que cumplen el filtro es de: {{cantAsig}}
+    </div>
+
+    <div class="row">
+        <div class="col mb-3" *ngFor="let asig of listaAsignaturas">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h4 class="card-title">{{asig.nombre}}</h4>
+                    <p class="card-text">Profesor:{{" "+asig.profesor}}<br>Ciclo:{{" "+asig.ciclo}}<br>Curso:{{" "+asig.curso}} </p>             
+                    <div class="row">
+                        <div  style="width: 4rem;" *ngFor="let item of asig.conocimientos" class="list-group list-group-horizontal">
+                            <li class="list-group-item">
+                                <img [src]="item.imagen" style="width: 2rem;" class="col">
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

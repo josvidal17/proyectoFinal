@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Los ciclos tecnológicos son</h2>
+    
+    <div class="row">
+        <div class="col">
+            <h2>DAM</h2>
+            <p>Asignaturas:</p>
+            <ul class="list-group">
+                <div class="col" *ngFor="let item of listaDam">
+                    <li class="list-group-item">{{item.nombre}}</li>
+                </div>
+            </ul>
+        </div>
+        <div class="col">
+            <h2>DAW</h2>
+            <p>Asignaturas:</p>
+            <ul class="list-group">
+                <div class="row" *ngFor="let item of listaDaw">
+                    <li class="list-group-item">{{item.nombre}}</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col mb-4" *ngFor="let ciclo of listaCiclos">
+            <div class="card" style="width: 18rem;">
+                <img [src]="ciclo.imagen" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{ciclo | ciclo}}</h5>
+                  <a class="btn btn-primary" (click)="cargarDetalle(ciclo)">Ver detalle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
