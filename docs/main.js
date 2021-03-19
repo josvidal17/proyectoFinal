@@ -592,8 +592,8 @@ class AsignaturasService {
     }
     getFiltroTodasAsignatura(asign, ciclo, conoci) {
         if (asign.length > 0 && ciclo.length > 0 && conoci.length > 0) {
-            return this.listaAsignaturas.filter((asig) => asig.nombre.toLocaleLowerCase().includes(asign.toLocaleLowerCase()) &&
-                asig.ciclo.toLocaleLowerCase() == ciclo.toLocaleLowerCase() &&
+            this.auxLista = this.listaAsignaturas.filter((asig) => asig.nombre.toLocaleLowerCase().includes(asign.toLocaleLowerCase()));
+            this.auxLista.filter((asig) => asig.ciclo.toLocaleLowerCase() == ciclo.toLocaleLowerCase() &&
                 asig.conocimientos.filter((cono) => cono.nombre.toLocaleLowerCase() == conoci.toLocaleLowerCase()));
         }
         this.auxLista = this.listaAsignaturas;
